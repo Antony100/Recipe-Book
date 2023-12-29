@@ -82,3 +82,11 @@ ingredientList.innerHTML = ingredientsHTML;
 // Populate the instructions
 const instructionsHTML = pizzaRecipe.instructions.map(instruction => `<p>${instruction}</p>`).join('');
 instructions.innerHTML = instructionsHTML;
+
+
+// function scaleIngredients (x, y) {
+//     if (x < y) {
+//         let scaleUpNumber = y / x;
+
+//     }
+// }

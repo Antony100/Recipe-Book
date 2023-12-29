@@ -1,0 +1,16 @@
+#navbar {
+    margin-top: 2%;
+    background-color: rgba(240, 49, 23, 1);
+    border-radius: 10px;
+
+}
+
+#logo {
+    height: 70px;
+    width: 70px;
+}
+
+#brandName {
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+}
