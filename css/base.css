@@ -14,3 +14,36 @@
     font-family: 'Great Vibes', cursive;
     font-size: 45px;
 }
+
+#searchIcon {
+    text-align: end;
+    color: white;
+}
+
+#searchBox>input {
+    color: white;
+}
+
+#navAbout {
+    text-align: end;
+}
+
+#randomRecipe {
+    text-align: center;
+}
+
+#randomIcon {
+    color: white;
+    padding-right: 0.5em;
+}
+
+#randomBtn {
+    color: white;
+    background-color: rgba(240, 49, 23, 1);
+    border-radius: 1em;
+    border-color: white;
+    border-width: 0.5em;
+    max-height: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
