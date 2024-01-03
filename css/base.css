@@ -5,6 +5,15 @@
 
 }
 
+nav ul li {
+    padding: 4px;
+}
+
+nav ul a {
+    font-size: 1.3em;
+}
+
+
 #logo {
     height: 70px;
     width: 70px;
@@ -13,4 +22,149 @@
 #brandName {
     font-family: 'Great Vibes', cursive;
     font-size: 45px;
+}
+
+#searchIcon {
+    text-align: end;
+    color: white;
+}
+
+#searchBox>input {
+    color: white;
+}
+
+#navAbout {
+    text-align: end;
+    font-family: 'Kanit', sans-serif;
+}
+
+#randomRecipe {
+    text-align: center;
+    padding-right: 1em;
+}
+
+#randomIcon {
+    color: white;
+    padding-right: 0.5em;
+}
+
+#randomBtn {
+    color: white;
+    background-color: rgba(240, 49, 23, 1);
+    border-radius: 1em;
+    border-color: white;
+    border-width: 0.2em;
+    max-height: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 1.3em;
+    font-family: 'Kanit', sans-serif;
+}
+
+#addRecipeBtn {
+    color: white;
+    background-color: rgba(240, 49, 23, 1);
+    border-radius: 1em;
+    border-color: white;
+    border-width: 0.2em;
+    max-height: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 1.3em;
+    font-family: 'Kanit', sans-serif;
+}
+
+/* media queries */
+@media (max-width:400px) {
+
+    nav ul a {
+        font-size: 10px;
+    }
+
+    #brandName {
+        font-family: 'Great Vibes', cursive;
+        font-size: 19px;
+        margin-left: 20px;
+    }
+
+    #logo {
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        padding-right: 15px;
+        padding-top: 10px;
+    }
+
+    .hide-text {
+        display: none;
+    }
+
+    #randomBtn {
+        padding-right: 0em;
+        padding-left: 0.5em;
+    }
+
+    #addRecipeBtn {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+
+@media (min-width:400px) and (max-width:600px) {
+
+    nav ul a {
+        font-size: 14px;
+    }
+
+    #brandName {
+        font-family: 'Great Vibes', cursive;
+        font-size: 21px;
+    }
+
+    #logo {
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        padding-right: 15px;
+        padding-top: 10px;
+    }
+
+    .hide-text {
+        display: none;
+    }
+
+    #randomBtn {
+        padding-right: 0em;
+        padding-left: 0.5em;
+    }
+
+    #addRecipeBtn {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media (min-width:600px) and (max-width:800px) {
+    #brandName {
+        font-family: 'Great Vibes', cursive;
+        font-size: 30px;
+    }
+
+    #logo {
+        height: 60px;
+        width: 65px;
+        display: inline-block;
+        padding-right: 15px;
+        padding-top: 10px;
+    }
+
+    .hide-text {
+        display: none;
+    }
+
+    #randomBtn {
+        padding-right: 0em;
+        padding-left: 0.5em;
+    }
 }
