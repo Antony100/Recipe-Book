@@ -5,6 +5,15 @@
 
 }
 
+nav ul li {
+    padding: 4px;
+}
+
+nav ul a {
+    font-size: 1.3em;
+}
+
+
 #logo {
     height: 70px;
     width: 70px;
@@ -27,7 +36,6 @@
 #navAbout {
     text-align: end;
     font-family: 'Kanit', sans-serif;
-    font-size: 1.2em;
 }
 
 #randomRecipe {
@@ -45,7 +53,7 @@
     background-color: rgba(240, 49, 23, 1);
     border-radius: 1em;
     border-color: white;
-    border-width: 0.3em;
+    border-width: 0.2em;
     max-height: 2em;
     padding-left: 1em;
     padding-right: 1em;
@@ -53,8 +61,26 @@
     font-family: 'Kanit', sans-serif;
 }
 
+#addRecipeBtn {
+    color: white;
+    background-color: rgba(240, 49, 23, 1);
+    border-radius: 1em;
+    border-color: white;
+    border-width: 0.2em;
+    max-height: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 1.3em;
+    font-family: 'Kanit', sans-serif;
+}
 
+/* media queries */
 @media (max-width:400px) {
+
+    nav ul a {
+        font-size: 10px;
+    }
+
     #brandName {
         font-family: 'Great Vibes', cursive;
         font-size: 19px;
@@ -69,7 +95,7 @@
         padding-top: 10px;
     }
 
-    #randomBtnText {
+    .hide-text {
         display: none;
     }
 
@@ -77,10 +103,20 @@
         padding-right: 0em;
         padding-left: 0.5em;
     }
+
+    #addRecipeBtn {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 
 
 @media (min-width:400px) and (max-width:600px) {
+
+    nav ul a {
+        font-size: 14px;
+    }
+
     #brandName {
         font-family: 'Great Vibes', cursive;
         font-size: 21px;
@@ -94,13 +130,18 @@
         padding-top: 10px;
     }
 
-    #randomBtnText {
+    .hide-text {
         display: none;
     }
 
     #randomBtn {
         padding-right: 0em;
         padding-left: 0.5em;
+    }
+
+    #addRecipeBtn {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
 
@@ -118,7 +159,7 @@
         padding-top: 10px;
     }
 
-    #randomBtnText {
+    .hide-text {
         display: none;
     }
 
