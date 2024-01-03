@@ -26,10 +26,13 @@
 
 #navAbout {
     text-align: end;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.2em;
 }
 
 #randomRecipe {
     text-align: center;
+    padding-right: 1em;
 }
 
 #randomIcon {
@@ -42,8 +45,85 @@
     background-color: rgba(240, 49, 23, 1);
     border-radius: 1em;
     border-color: white;
-    border-width: 0.5em;
-    max-height: 3em;
+    border-width: 0.3em;
+    max-height: 2em;
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.3em;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+@media (max-width:400px) {
+    #brandName {
+        font-family: 'Great Vibes', cursive;
+        font-size: 19px;
+        margin-left: 20px;
+    }
+
+    #logo {
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        padding-right: 15px;
+        padding-top: 10px;
+    }
+
+    #randomBtnText {
+        display: none;
+    }
+
+    #randomBtn {
+        padding-right: 0em;
+        padding-left: 0.5em;
+    }
+}
+
+
+@media (min-width:400px) and (max-width:600px) {
+    #brandName {
+        font-family: 'Great Vibes', cursive;
+        font-size: 21px;
+    }
+
+    #logo {
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        padding-right: 15px;
+        padding-top: 10px;
+    }
+
+    #randomBtnText {
+        display: none;
+    }
+
+    #randomBtn {
+        padding-right: 0em;
+        padding-left: 0.5em;
+    }
+}
+
+@media (min-width:600px) and (max-width:800px) {
+    #brandName {
+        font-family: 'Great Vibes', cursive;
+        font-size: 30px;
+    }
+
+    #logo {
+        height: 60px;
+        width: 65px;
+        display: inline-block;
+        padding-right: 15px;
+        padding-top: 10px;
+    }
+
+    #randomBtnText {
+        display: none;
+    }
+
+    #randomBtn {
+        padding-right: 0em;
+        padding-left: 0.5em;
+    }
 }

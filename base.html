@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&family=Roboto&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kanit:wght@500&family=Montserrat&family=Roboto&display=swap"
         rel="stylesheet">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script defer src="js/base.js"></script>
     <script defer src="https://kit.fontawesome.com/fe1af8051b.js" crossorigin="anonymous"></script>
     <title>My Recipes</title>
@@ -23,20 +26,17 @@
             <img id="logo" src="assets/my-recipes-logo.png" alt="my recipes logo">
         </div>
         <div id="brandName" class="col s4">My Recipes</div>
-        <div id="search">
-            <div id="searchIcon" class="col s1">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <div id="searchBox" class="col s2">
-                <input type="text" placeholder="Search..">
-            </div>
-            <div id="navAbout" class="col s1">
+        <ul id="navElements" class="right">
+            <li id="navAbout">
                 <a href="#">about</a>
-            </div>
-            <div id="randomRecipe" class="col s3">
+            </li>
+            <li id="randomRecipe">
 
-                <button id="randomBtn"><i class="fa-solid fa-shuffle" id="randomIcon"></i>Random</button>
-            </div>
+                <button id="randomBtn">
+                    <i class="fa-solid fa-shuffle" id="randomIcon"></i> <span id="randomBtnText">Random</span>
+                </button>
+            </li>
+        </ul>
 
     </nav>
 
