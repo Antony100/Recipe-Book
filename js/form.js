@@ -6,14 +6,16 @@ fetch('./nav.html')
     })
     .catch(error => console.error('Error fetching nav.html:', error));
 
+const Recipes = {}
+
+
+// add ingredients section and ingredients
 function addIngredientSection() {
     const ingredientSections = document.getElementById('ingredientSections');
 
-    // Create a new ingredient section
     const newIngredientSection = document.createElement('div');
     newIngredientSection.className = 'ingredient-section';
 
-    // Add input field for the section name
     newIngredientSection.innerHTML = `
             <label for="sectionName">Ingredient Section Name:</label>
             <input type="text" name="sectionName" required>
@@ -26,17 +28,23 @@ function addIngredientSection() {
 
     // Add input fields for quantity, measurement, and ingredient
     ingredientContainer.innerHTML = `
-            <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity" required>
-            
-            <label for="measurement">Measurement:</label>
-            <input type="text" name="measurement" required>
-            
-            <label for="ingredient">Ingredient:</label>
-            <input type="text" name="ingredient" required>
+        <div class="row ingredient-container">
+            <div class="col s4">
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" required>
+            </div>
+            <div class="col s4">
+                <label for="measurement">Measurement:</label>
+                <input type="text" name="measurement" required>
+            </div>
+            <div class="col s4">
+                <label for="ingredient">Ingredient:</label>
+                <input type="text" name="ingredient" required>
+            </div>
+        </div>
           `;
 
-    // Add button to dynamically add more ingredients
+    // dynamically add button
     const addIngredientButton = document.createElement('button');
     addIngredientButton.type = 'button';
     addIngredientButton.textContent = 'Add Ingredient';
@@ -44,37 +52,37 @@ function addIngredientSection() {
         addIngredient(ingredientContainer);
     };
     newIngredientSection.appendChild(addIngredientButton);
-
-    // Append the new ingredient section to the container
     ingredientSections.appendChild(newIngredientSection);
 }
 
 function addIngredient(container) {
-    // Create a container for the new ingredient
     const ingredientContainer = document.createElement('div');
     ingredientContainer.className = 'ingredient-container';
 
     // Add input fields for quantity, measurement, and ingredient
     ingredientContainer.innerHTML = `
-            <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity" required>
-            
-            <label for="measurement">Measurement:</label>
-            <input type="text" name="measurement" required>
-            
-            <label for="ingredient">Ingredient:</label>
-            <input type="text" name="ingredient" required>
+        <div class="row">
+            <div class="col s4">
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" required>
+            </div>
+            <div class="col s4">
+                <label for="measurement">Measurement:</label>
+                <input type="text" name="measurement" required>
+            </div>
+            <div class="col s4">
+                <label for="ingredient">Ingredient:</label>
+                <input type="text" name="ingredient" required>
+            </div>
+        </div>
           `;
-
-    // Append the new ingredient container to the section's container
     container.appendChild(ingredientContainer);
 }
 
+// add more intructions dynamically
 function addInstruction() {
-    // Create a container for the new instruction
     const instructionContainer = document.getElementById('instructionContainer');
 
-    // Add textarea for the new instruction
     const newInstruction = document.createElement('div');
     newInstruction.className = 'instruction-container';
     newInstruction.innerHTML = `
@@ -82,12 +90,10 @@ function addInstruction() {
             <textarea name="instruction" rows="4" required></textarea>
           `;
 
-    // Append the new instruction container to the instructions container
     instructionContainer.appendChild(newInstruction);
 }
 
 function submitRecipe() {
-    // Get values from the form and construct the recipe object
     const recipe = {
         title: document.getElementById('title').value,
         prepTime: document.getElementById('prepTime').value,
@@ -114,20 +120,17 @@ function getIngredients() {
     // Iterate over each ingredient section and gather values
     for (const section of ingredientSections) {
         const sectionName = section.querySelector('input[name="sectionName"]').value;
-        const quantityInputs = section.querySelectorAll('input[name="quantity"]');
-        const measurementInputs = section.querySelectorAll('input[name="measurement"]');
-        const ingredientInputs = section.querySelectorAll('input[name="ingredient"]');
+        const quantityInputs = section.querySelectorAll('.ingredient-container input[name="quantity"]');
+        const measurementInputs = section.querySelectorAll('.ingredient-container input[name="measurement"]');
+        const ingredientInputs = section.querySelectorAll('.ingredient-container input[name="ingredient"]');
 
-        // Initialize array for ingredients within the section
         ingredients[sectionName] = [];
 
-        // Iterate over each input field for quantity, measurement, and ingredient
         for (let i = 0; i < quantityInputs.length; i++) {
             const quantity = quantityInputs[i].value;
             const measurement = measurementInputs[i].value;
             const ingredient = ingredientInputs[i].value;
 
-            // Add the ingredient to the object using the section name as the key
             ingredients[sectionName].push({ quantity, measurement, ingredient });
         }
     }
@@ -148,3 +151,5 @@ function getInstructions() {
 
     return instructions;
 }
+
+console.log(localStorage)
