@@ -93,25 +93,6 @@ function addInstruction() {
     instructionContainer.appendChild(newInstruction);
 }
 
-function submitRecipe() {
-    const recipe = {
-        title: document.getElementById('title').value,
-        prepTime: document.getElementById('prepTime').value,
-        cookTime: document.getElementById('cookTime').value,
-        difficulty: document.getElementById('difficulty').value,
-        serves: parseInt(document.getElementById('serves').value),
-        dishType: document.getElementById('dishType').value,
-        isVegetarian: document.getElementById('isVegetarian').value === 'yes',
-        isVegan: document.getElementById('isVegan').value === 'yes',
-        ingredients: getIngredients(),
-        instructions: getInstructions(),
-        image: document.getElementById('image').value,
-    };
-
-    // Add the new recipe to the recipes object or do something else with it
-    console.log(recipe);
-}
-
 function getIngredients() {
     // Get all ingredient sections
     const ingredientSections = document.getElementsByClassName('ingredient-section');
@@ -151,5 +132,28 @@ function getInstructions() {
 
     return instructions;
 }
+
+function submitRecipe() {
+    const recipe = {
+        title: document.getElementById('title').value,
+        prepTime: document.getElementById('prepTime').value,
+        cookTime: document.getElementById('cookTime').value,
+        difficulty: document.getElementById('difficulty').value,
+        serves: parseInt(document.getElementById('serves').value),
+        dishType: document.getElementById('dishType').value,
+        isVegetarian: document.getElementById('isVegetarian').value === 'yes',
+        isVegan: document.getElementById('isVegan').value === 'yes',
+        ingredients: getIngredients(),
+        instructions: getInstructions(),
+        image: document.getElementById('image').value,
+    };
+
+    // Add the new recipe to the recipes object or do something else with it
+    console.log(recipe);
+}
+
+
+
+
 
 console.log(localStorage)
