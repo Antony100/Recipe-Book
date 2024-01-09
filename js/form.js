@@ -177,6 +177,7 @@ function submitRecipe() {
 
     // Add the new recipe to the recipes object or do something else with it
     console.log(recipe);
+    return false;
 }
 
 
