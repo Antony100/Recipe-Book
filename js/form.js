@@ -31,12 +31,25 @@ function addIngredientSection() {
         <div class="row ingredient-container">
             <div class="col s4">
                 <label for="quantity">Quantity:</label>
-                <input type="number" name="quantity" required>
+                <input type="text" name="quantity" required>
             </div>
+
             <div class="col s4">
                 <label for="measurement">Measurement:</label>
-                <input type="text" name="measurement" required>
+                <input type="text" name="measurement" list="measure-select">
+                <datalist id="measure-select">
+                    <option value="grams">
+                    <option value="kilograms">
+                    <option value="millilitres">
+                    <option value="litres">
+                    <option value="cups">
+                    <option value="teaspoon">
+                    <option value="tablespoon">
+                    <option value="ounces">
+                    <option value="pounds">
+                </datalist>
             </div>
+
             <div class="col s4">
                 <label for="ingredient">Ingredient:</label>
                 <input type="text" name="ingredient" required>
@@ -64,12 +77,26 @@ function addIngredient(container) {
         <div class="row">
             <div class="col s4">
                 <label for="quantity">Quantity:</label>
-                <input type="number" name="quantity" required>
+                <input type="text" name="quantity" required>
             </div>
+
             <div class="col s4">
                 <label for="measurement">Measurement:</label>
-                <input type="text" name="measurement" required>
+                <input type="text" name="measurement" list="measure-select">
+                <datalist id="measure-select">
+                    <option value="grams">
+                    <option value="kilograms">
+                    <option value="millilitres">
+                    <option value="litres">
+                    <option value="cups">
+                    <option value="teaspoon">
+                    <option value="tablespoon">
+                    <option value="ounces">
+                    <option value="pounds">
+                </datalist>
             </div>
+
+
             <div class="col s4">
                 <label for="ingredient">Ingredient:</label>
                 <input type="text" name="ingredient" required>
