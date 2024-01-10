@@ -234,11 +234,28 @@ nav ul a {
 
 .card-image {
     max-height: 100% !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image:hover .card-title,
+.card-image:hover .btn-floating.halfway-fab {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card-title,
+.btn-floating.halfway-fab {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .btn-floating.halfway-fab {
     right: 24px !important;
     bottom: 10px !important;
+    position: absolute;
 }
 
 .card-title {
@@ -246,4 +263,12 @@ nav ul a {
     font-size: 30px !important;
     text-shadow: 2px 2px 4px #000000;
     /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+}
+
+.card {
+    background-color: #f9f8f8;
+}
+
+.no-shadows {
+    box-shadow: none !important;
 }

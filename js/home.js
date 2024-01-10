@@ -44,3 +44,122 @@ const recipes = {
     }
 };
 
+// let soupLocal = JSON.parse(localStorage.getItem("Chicken Soup"))
+
+// function addRecipe() {
+//     const recipeContainer = document.getElementById('recipeList');
+//     const newRecipeCard = document.createElement('div');
+//     newRecipeCard.className = 'recipe-container';
+
+//     newRecipeCard.innerHTML = `
+//         <div class="col s4 m4">
+//             <div class="card small">
+//                 <div class="card-image">
+//                     <img src=${soupLocal.image}>
+//                     <span class="card-title">${soupLocal.title}</span>
+//                     <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+//                     class="material-icons">create</i></a>
+//                 </div>
+//             </div>
+//         </div>
+//           `;
+//     recipeContainer.appendChild(newRecipeCard);
+// }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const items = { ...localStorage };
+
+    for (const key in items) {
+        if (items.hasOwnProperty(key)) {
+            try {
+                const currentItem = JSON.parse(items[key]);
+                createCardElement(currentItem);
+            } catch (error) {
+                console.error('Error parsing JSON:', error);
+            }
+        }
+    }
+});
+
+function createCardElement(item) {
+    var recipeListContainer = document.getElementById('recipeList'); // Assuming you have a container for your cards
+
+    // Create a new card element
+    var card = document.createElement('div');
+    card.className = 'col s4 m4';
+
+    // Define card content using a template string
+    var cardContent = `
+        <div class="card small no-shadows">
+            <div class="card-image">
+                <img src='${item.image}'>
+                <span class="card-title">${item.title}</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">create</i></a>
+            </div>
+        </div>
+    `;
+
+    // Set the HTML content of the card element
+    card.innerHTML = cardContent;
+
+    // Append the card element to the recipeList container
+    recipeListContainer.appendChild(card);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for (let recipe in localStorage) {
+//     JSON.parse(localStorage.getItem(recipe));
+//     console.log(recipe);
+
+// }
+
+// function allStorage() {
+
+//     var values = [],
+//         keys = Object.keys(localStorage),
+//         i = keys.length;
+
+//     while (i--) {
+//         values.push(localStorage.getItem(keys[i]));
+//     }
+
+//     return values;
+// }
+
+// allStorage()
+
+const items = { ...localStorage };
+
+console.log(items)
+// console.log(typeof (localStorage.sdf))
+
+
+// const parsedLocal = {}
+
+// for (let key in localStorage) {
+//     (JSON.parse(parsedLocal[key])) = JSON.parse(localStorage[key])
+// }
+
+// console.log(parsedLocal)
