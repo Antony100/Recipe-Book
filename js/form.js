@@ -6,7 +6,6 @@ fetch('./nav.html')
     })
     .catch(error => console.error('Error fetching nav.html:', error));
 
-const Recipes = {}
 
 
 // add ingredients section and ingredients
@@ -177,11 +176,10 @@ function submitRecipe() {
 
     // Add the new recipe to the recipes object or do something else with it
     console.log(recipe);
+    localStorage.setItem(recipe.title, JSON.stringify(recipe))
+    window.location.href = "http://127.0.0.1:5500/Recipe-Book/home.html"
     return false;
 }
 
 
-
-
-
-console.log(localStorage)
+// console.log(localStorage)
