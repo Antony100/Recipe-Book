@@ -1,12 +1,3 @@
-const recipeName = document.getElementById("recipeName");
-const prepTime = document.getElementById("prepTime");
-const cookTime = document.getElementById("cookTime");
-const difficulty = document.getElementById("difficulty");
-const serves = document.getElementById("serves");
-const dishType = document.getElementById("dishType");
-const ingredientList = document.getElementById("ingredientList");
-const instructions = document.getElementById("instructions");
-
 fetch('./nav.html')
     .then(response => response.text())
     .then(data => {
@@ -53,47 +44,3 @@ const recipes = {
     }
 };
 
-
-// localStorage.setItem("recipes", JSON.stringify(recipes));
-
-// console.log(localStorage)
-
-let localStorageRecipes = JSON.parse(localStorage.recipes)
-const pizzaRecipe = localStorageRecipes.pizza;
-
-// Assign the values to the corresponding elements
-recipeName.innerText = pizzaRecipe.title;
-prepTime.innerText = pizzaRecipe.prepTime;
-cookTime.innerText = pizzaRecipe.cookTime;
-difficulty.innerText = pizzaRecipe.difficulty;
-serves.innerText = pizzaRecipe.serves;
-dishType.innerText = pizzaRecipe.dishType;
-
-let ingredientsHTML = '';
-
-for (const ingredientCategory in pizzaRecipe.ingredients) {
-    if (Object.hasOwn(pizzaRecipe.ingredients, ingredientCategory)) {
-        const ingredients = pizzaRecipe.ingredients[ingredientCategory];
-
-        // Add header for the category
-        ingredientsHTML += `<h3>${ingredientCategory}</h3>`;
-
-        // Add ingredients for the category
-        const ingredientsListHTML = ingredients.map(ingredient => `<p>${ingredient}</p>`).join('');
-        ingredientsHTML += ingredientsListHTML;
-    }
-}
-
-ingredientList.innerHTML = ingredientsHTML;
-
-// Populate the instructions
-const instructionsHTML = pizzaRecipe.instructions.map(instruction => `<p>${instruction}</p>`).join('');
-instructions.innerHTML = instructionsHTML;
-
-
-// function scaleIngredients (x, y) {
-//     if (x < y) {
-//         let scaleUpNumber = y / x;
-
-//     }
-// }
