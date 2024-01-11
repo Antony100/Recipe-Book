@@ -272,3 +272,20 @@ nav ul a {
 .no-shadows {
     box-shadow: none !important;
 }
+
+.vl {
+    border-left: 6px solid green;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}
+
+#recipeTitle {
+    font-family: 'Great Vibes', cursive;
+}
+
+p {
+    font-family: 'Kanit', sans-serif;
+}

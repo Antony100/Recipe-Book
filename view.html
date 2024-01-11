@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kanit:wght@500&family=Montserrat&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script defer src="js/view.js"></script>
+    <script defer src="https://kit.fontawesome.com/fe1af8051b.js" crossorigin="anonymous"></script>
+    <title>My Recipes</title>
+</head>
+
+<body class="container">
+    <div class="row" id="navbar-container"></div>
+
+    <div class="row col s12 m12" id="recipeTitle">
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card small no-shadows">
+                <div class="card-image" id="recipeImage">
+                    <img src="https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg">
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="col s6 m4">
+                <p id="prepTime"></p>
+                <p id="cookTime"></p>
+                <p id="dishType"></p>
+                <p id="difficulty"></p>
+            </div>
+
+            <div class="col s6 m4">
+                <p id="isVegetarian"></p>
+                <p id="isVegan"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col s6 m4 ingredient-section" id="ingredientList">
+        </div>
+
+        <div class="col s12 m8" id="method">
+        </div>
+
+    </div>
+
+</body>
+
+</html>
