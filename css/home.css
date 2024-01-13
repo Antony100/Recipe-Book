@@ -44,16 +44,19 @@ select {
 }
 
 .ingredient-section {
-    margin-bottom: 20px;
+    padding-bottom: 20px !important;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 8px;
+    list-style: none;
 }
 
-.ingredient-container,
+/* .ingredient-container,
 .instruction-container {
     margin-bottom: 10px;
-}
+} */
+
+
 
 #navbar {
     margin-top: 2%;
@@ -285,11 +288,7 @@ select {
     font-family: 'Great Vibes', cursive;
 }
 
-p {
-    font-family: 'Kanit', sans-serif;
-}
-
-
+#recipeInfo,
 nav ul li a {
     font-family: 'Kanit', sans-serif;
 }
@@ -297,4 +296,8 @@ nav ul li a {
 nav i {
     font-size: 16px;
     height: 0px;
+}
+
+ul {
+    list-style: none;
 }
