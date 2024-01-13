@@ -62,13 +62,13 @@ select {
 
 }
 
-nav ul li {
+/* nav ul li {
     padding: 4px;
-}
+} */
 
-nav ul a {
+/* nav ul a {
     font-size: 1.3em;
-}
+} */
 
 
 #logo {
@@ -95,17 +95,16 @@ nav ul a {
     font-family: 'Kanit', sans-serif;
 }
 
-#randomRecipe {
+#randomBtn {
     text-align: center;
     padding-right: 1em;
 }
 
-#randomIcon {
+.randomIcon {
     color: white;
-    padding-right: 0.5em;
 }
 
-#randomBtn {
+/* #randomBtn {
     color: white;
     background-color: rgba(240, 49, 23, 1);
     border-radius: 1em;
@@ -116,9 +115,9 @@ nav ul a {
     padding-right: 1em;
     font-size: 1.3em;
     font-family: 'Kanit', sans-serif;
-}
+} */
 
-#addRecipeBtn {
+/* #addRecipeBtn {
     color: white;
     background-color: rgba(240, 49, 23, 1);
     border-radius: 1em;
@@ -129,7 +128,7 @@ nav ul a {
     padding-right: 1em;
     font-size: 1.3em;
     font-family: 'Kanit', sans-serif;
-}
+} */
 
 /* media queries */
 @media (max-width:400px) {
@@ -161,10 +160,10 @@ nav ul a {
         padding-left: 0.5em;
     }
 
-    #addRecipeBtn {
+    /* #addRecipeBtn {
         padding-left: 5px;
         padding-right: 5px;
-    }
+    } */
 }
 
 
@@ -196,10 +195,10 @@ nav ul a {
         padding-left: 0.5em;
     }
 
-    #addRecipeBtn {
+    /* #addRecipeBtn {
         padding-left: 5px;
         padding-right: 5px;
-    }
+    } */
 }
 
 @media (min-width:600px) and (max-width:800px) {
@@ -288,4 +287,14 @@ nav ul a {
 
 p {
     font-family: 'Kanit', sans-serif;
+}
+
+
+nav ul li a {
+    font-family: 'Kanit', sans-serif;
+}
+
+nav i {
+    font-size: 16px;
+    height: 0px;
 }

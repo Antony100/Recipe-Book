@@ -5,8 +5,6 @@ fetch('./nav.html')
     })
     .catch(error => console.error('Error fetching nav.html:', error));
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const items = { ...localStorage };
 
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', function (event) {
         const deleteButton = event.target.closest('#deleteRecipe');
 
-
         if (deleteButton) {
             const card = deleteButton.closest('.recipe-card');
             if (card) {
@@ -32,9 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const confirmDelete = confirm(`Are you sure you want to delete the recipe: ${recipeData.title}?`);
 
                 if (confirmDelete) {
-                    localStorage.removeItem("currentRecipe")
                     deleteRecipe(recipeData);
-
                     card.remove();
                 }
             }
@@ -42,6 +37,17 @@ document.addEventListener('DOMContentLoaded', function () {
             const recipeData = JSON.parse(event.target.getAttribute('data-recipe'));
             localStorage.setItem('currentRecipe', JSON.stringify(recipeData));
             window.location.href = 'view.html';
+        } else if (event.target.id === 'randomRecipe') {
+            const allRecipes = Object.values(localStorage).map(JSON.parse);
+
+            if (localStorage.length > 0) {
+                let randomRecipe = getRandomRecipe(allRecipes)
+
+                localStorage.setItem('currentRecipe', JSON.stringify(randomRecipe));
+                window.location.href = 'view.html';
+            } else {
+                alert('No recipes available. Add some recipes first.');
+            }
         }
     });
 
@@ -73,5 +79,11 @@ function createCardElement(item) {
 }
 
 function deleteRecipe(recipeData) {
+    // Remove the recipe from localStorage
     localStorage.removeItem(recipeData.title);
 }
+
+function getRandomRecipe(obj) {
+    let keys = Object.keys(obj);
+    return obj[keys[keys.length * Math.random() << 0]];
+};
