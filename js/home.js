@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const confirmDelete = confirm(`Are you sure you want to delete the recipe: ${recipeData.title}?`);
 
                 if (confirmDelete) {
+                    localStorage.removeItem("currentRecipe");
                     deleteRecipe(recipeData);
                     card.remove();
                 }
