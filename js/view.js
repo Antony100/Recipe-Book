@@ -34,5 +34,28 @@ document.addEventListener('DOMContentLoaded', function () {
         currentRecipeData.instructions.forEach(instruction => {
             methodSection.innerHTML += `<p>${instruction}</p>`;
         });
+
     }
+
 });
+
+document.addEventListener('click', function (event) {
+    if (event.target.id === 'randomRecipe') {
+        const allRecipes = Object.values(localStorage).map(JSON.parse);
+
+        if (localStorage.length > 0) {
+            let randomRecipe = getRandomRecipe(allRecipes)
+
+            localStorage.setItem('currentRecipe', JSON.stringify(randomRecipe));
+            window.location.href = 'view.html';
+        } else {
+            alert('No recipes available. Add some recipes first.');
+        }
+    }
+
+});
+
+function getRandomRecipe(obj) {
+    let keys = Object.keys(obj);
+    return obj[keys[keys.length * Math.random() << 0]];
+};
