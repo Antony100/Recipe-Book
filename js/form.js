@@ -1,4 +1,3 @@
-// Fetch and insert nav.html content into the specified container
 fetch('./nav.html')
     .then(response => response.text())
     .then(data => {
@@ -27,7 +26,6 @@ function getRandomRecipe(obj) {
     return obj[keys[keys.length * Math.random() << 0]];
 };
 
-// add ingredients section and ingredients
 function addIngredientSection() {
     const ingredientSections = document.getElementById('ingredientSections');
 
@@ -39,12 +37,10 @@ function addIngredientSection() {
             <input type="text" name="sectionName" required>
           `;
 
-    // Create a container for ingredients within the section
     const ingredientContainer = document.createElement('div');
     ingredientContainer.className = 'ingredient-container';
     newIngredientSection.appendChild(ingredientContainer);
 
-    // Add input fields for quantity, measurement, and ingredient
     ingredientContainer.innerHTML = `
         <div class="row ingredient-container">
             <div class="col s4">
@@ -90,7 +86,6 @@ function addIngredient(container) {
     const ingredientContainer = document.createElement('div');
     ingredientContainer.className = 'ingredient-container';
 
-    // Add input fields for quantity, measurement, and ingredient
     ingredientContainer.innerHTML = `
         <div class="row">
             <div class="col s4">
@@ -124,7 +119,6 @@ function addIngredient(container) {
     container.appendChild(ingredientContainer);
 }
 
-// add more intructions dynamically
 function addInstruction() {
     const instructionContainer = document.getElementById('instructionContainer');
 
@@ -165,11 +159,9 @@ function getIngredients() {
 }
 
 function getInstructions() {
-    // Get all instruction containers
     const instructionContainers = document.querySelectorAll('.instruction-container');
     const instructions = [];
 
-    // Iterate over each instruction container and gather values
     for (const container of instructionContainers) {
         const instruction = container.querySelector('textarea[name="instruction"]').value;
         instructions.push(instruction);
@@ -193,12 +185,8 @@ function submitRecipe() {
         image: document.getElementById('image').value,
     };
 
-    // Add the new recipe to the recipes object or do something else with it
-    console.log(recipe);
-    localStorage.setItem(recipe.title, JSON.stringify(recipe))
+    localStorage.setItem(recipe.title, JSON.stringify(recipe));
     window.location.href = "http://127.0.0.1:5500/Recipe-Book/home.html"
     return false;
 }
 
-
-// console.log(localStorage)

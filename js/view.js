@@ -1,4 +1,3 @@
-// Fetch the navigation bar
 fetch('./nav.html')
     .then(response => response.text())
     .then(data => {

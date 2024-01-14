@@ -69,7 +69,7 @@ function createCardElement(item) {
         <div class="card small no-shadows">
             <div class="card-image">
                 <img src='${item.image}' class="recipe-image" data-recipe='${JSON.stringify(item)}'>
-                <span class="card-title">${item.title}</span>
+                <span class="card-title text-small">${item.title}</span>
                 <a id="deleteRecipe" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
             </div>
         </div>
