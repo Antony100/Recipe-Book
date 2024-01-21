@@ -34,6 +34,21 @@ document.addEventListener('DOMContentLoaded', function () {
             methodSection.innerHTML += `<p>${instruction}</p>`;
         });
 
+        // Add event listener for ingredient list
+        ingredientList.addEventListener('click', function (event) {
+            // Check if a list item (ingredient) was clicked
+            if (event.target.tagName === 'LI') {
+                // Toggle the 'strikethrough' class
+                event.target.classList.toggle('strike');
+            }
+        });
+        methodSection.addEventListener('click', function (event) {
+            // Check if a list item (ingredient) was clicked
+            if (event.target.tagName === 'P') {
+                // Toggle the 'strikethrough' class
+                event.target.classList.toggle('strike');
+            }
+        });
     }
 
 });
@@ -43,7 +58,7 @@ document.addEventListener('click', function (event) {
         const allRecipes = Object.values(localStorage).map(JSON.parse);
 
         if (localStorage.length > 0) {
-            let randomRecipe = getRandomRecipe(allRecipes)
+            let randomRecipe = getRandomRecipe(allRecipes);
 
             localStorage.setItem('currentRecipe', JSON.stringify(randomRecipe));
             window.location.href = 'view.html';
@@ -51,7 +66,6 @@ document.addEventListener('click', function (event) {
             alert('No recipes available. Add some recipes first.');
         }
     }
-
 });
 
 function getRandomRecipe(obj) {
