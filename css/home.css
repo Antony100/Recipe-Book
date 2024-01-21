@@ -259,3 +259,16 @@ nav i {
 ul {
     list-style: none;
 }
+
+.strike {
+    text-decoration: line-through;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+#ingredientList li,
+#method p {
+    cursor: pointer;
+}
