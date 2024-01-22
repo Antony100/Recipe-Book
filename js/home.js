@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const items = { ...localStorage };
 
     for (const key in items) {
-        if (items.hasOwnProperty(key)) {
+        if (items.hasOwnProperty(key) && key !== 'currentRecipe') {
             try {
                 const currentItem = JSON.parse(items[key]);
                 createCardElement(currentItem);
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('click', function (event) {
         const deleteButton = event.target.closest('#deleteRecipe');
+        const editButton = event.target.closest('#editRecipe');
 
         if (deleteButton) {
             const card = deleteButton.closest('.recipe-card');
@@ -38,6 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const recipeData = JSON.parse(event.target.getAttribute('data-recipe'));
             localStorage.setItem('currentRecipe', JSON.stringify(recipeData));
             window.location.href = 'view.html';
+        } else if (editButton) {
+            const card = editButton.closest('.recipe-card');
+            if (card) {
+                const recipeData = JSON.parse(card.querySelector('.recipe-image').getAttribute('data-recipe'));
+                localStorage.setItem('currentRecipe', JSON.stringify(recipeData));
+                window.location.href = `edit-recipe.html?editRecipe=${encodeURIComponent(recipeData.title)}`;
+            }
         } else if (event.target.id === 'randomRecipe') {
             const allRecipes = Object.values(localStorage).map(JSON.parse);
 
@@ -70,7 +78,8 @@ function createCardElement(item) {
             <div class="card-image">
                 <img src='${item.image}' class="recipe-image" data-recipe='${JSON.stringify(item)}'>
                 <span class="card-title text-small">${item.title}</span>
-                <a id="deleteRecipe" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
+                <a id="editRecipe" class="btn-floating halfway-fab edit-btn-pos waves-effect waves-light green"><i class="material-icons">create</i></a>
+                <a id="deleteRecipe" class="btn-floating halfway-fab delete-btn-pos waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
             </div>
         </div>
     `;

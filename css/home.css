@@ -36,7 +36,7 @@ select {
 }
 
 .ingredient-section {
-    padding-bottom: 20px !important;
+    margin-bottom: 20px !important;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 8px;
@@ -212,11 +212,11 @@ select {
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.btn-floating.halfway-fab {
-    right: 24px !important;
-    bottom: 10px !important;
+/* .btn-floating.halfway-fab {
+    right: 24px;
+    bottom: 10px;
     position: absolute;
-}
+} */
 
 .card-title {
     font-family: 'Great Vibes', cursive;
@@ -271,4 +271,16 @@ ul {
 #ingredientList li,
 #method p {
     cursor: pointer;
+}
+
+.delete-btn-pos {
+    right: 24px !important;
+    bottom: 10px !important;
+    position: absolute;
+}
+
+.edit-btn-pos {
+    right: 24px !important;
+    bottom: 60px !important;
+    position: absolute;
 }
