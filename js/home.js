@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (card) {
                 const recipeData = JSON.parse(card.querySelector('.recipe-image').getAttribute('data-recipe'));
                 localStorage.setItem('currentRecipe', JSON.stringify(recipeData));
-                window.location.href = `form.html?editRecipe=${encodeURIComponent(recipeData.title)}`;
+                window.location.href = `edit-recipe.html?editRecipe=${encodeURIComponent(recipeData.title)}`;
             }
         } else if (event.target.id === 'randomRecipe') {
             const allRecipes = Object.values(localStorage).map(JSON.parse);
