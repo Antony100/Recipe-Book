@@ -91,23 +91,21 @@ function addIngredientSection(sectionName, ingredients) {
     newIngredientSection.innerHTML = `
         <label for="sectionName">Ingredient Section Name:</label>
         <input type="text" name="sectionName" value="${sectionName || ''}" required>
+        <button type="button" class="delete-section-btn" onclick="deleteSection(this)">Delete Section</button>
     `;
 
     const ingredientContainer = document.createElement('div');
     ingredientContainer.className = 'ingredient-container';
     newIngredientSection.appendChild(ingredientContainer);
 
-    // Check if ingredients is defined and not empty
     if (ingredients && ingredients.length > 0) {
         ingredients.forEach(ingredient => {
             addIngredient(ingredientContainer, ingredient);
         });
     } else {
-        // If ingredients is undefined or empty, add a default ingredient
         addIngredient(ingredientContainer);
     }
 
-    // dynamically add button
     const addIngredientButton = document.createElement('button');
     addIngredientButton.type = 'button';
     addIngredientButton.textContent = 'Add Ingredient';
@@ -124,7 +122,7 @@ function addIngredient(container, ingredient) {
 
     ingredientContainer.innerHTML = `
         <div class="row">
-            <div class="col s4">
+            <div class="col s3">
                 <label for="quantity">Quantity:</label>
                 <input type="text" name="quantity" value="${ingredient ? ingredient.quantity : ''}" required>
             </div>
@@ -149,6 +147,11 @@ function addIngredient(container, ingredient) {
                 <label for="ingredient">Ingredient:</label>
                 <input type="text" name="ingredient" value="${ingredient ? ingredient.ingredient : ''}" required>
             </div>
+
+            <div class="col s1">
+                <a class="delete-instruction-btn" onclick="deleteIngredient(this)"><i class="material-icons icon-medium">delete_forever</i></a>
+            </div>
+
         </div>
     `;
     container.appendChild(ingredientContainer);
@@ -160,11 +163,32 @@ function addInstruction(instruction) {
     const newInstruction = document.createElement('div');
     newInstruction.className = 'instruction-container';
     newInstruction.innerHTML = `
-        <label for="instruction">Instruction:</label>
-        <textarea name="instruction" rows="4" required>${instruction || ''}</textarea>
+        <div class="col s11">
+            <label for="instruction">Instruction:</label>
+            <textarea name="instruction" rows="4" required>${instruction || ''}</textarea>
+        </div>
+
+        <div class="col s1">
+            <a class="delete-instruction-btn" onclick="deleteInstruction(this)"><i class="material-icons icon-medium">delete_forever</i></a>
+        </div>
     `;
 
     instructionContainer.appendChild(newInstruction);
+}
+
+function deleteSection(button) {
+    const section = button.closest('.ingredient-section');
+    section.remove();
+}
+
+function deleteIngredient(button) {
+    const ingredient = button.closest('.ingredient-container');
+    ingredient.remove();
+}
+
+function deleteInstruction(button) {
+    const instruction = button.closest('.instruction-container');
+    instruction.remove();
 }
 
 function getIngredients() {

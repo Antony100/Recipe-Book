@@ -36,7 +36,7 @@ select {
 }
 
 .ingredient-section {
-    margin-bottom: 20px !important;
+    padding-bottom: 20px !important;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 8px;
