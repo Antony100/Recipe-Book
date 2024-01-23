@@ -314,10 +314,14 @@ ul {
     color: #f44336;
 }
 
-/* .deleteIngredient0a {
-    color: #f44336 !important;
-} */
 
 .icon-medium {
-    font-size: 45px !important;
+    font-size: 40px !important;
+}
+
+.delete-instruction-btn {
+    top: 30px;
+    position: relative;
+    cursor: pointer;
+    color: #f44336;
 }

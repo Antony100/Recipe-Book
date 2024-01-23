@@ -146,7 +146,7 @@ function addInstruction() {
     </div>
 
     <div class="col s1">
-        <a class="delete-intruction-step"><i class="material-icons icon-medium">delete_forever</i></a>
+        <a class="delete-instruction-btn" onclick="deleteInstruction(this)"><i class="material-icons icon-medium">delete_forever</i></a>
     </div>
     `;
 
@@ -161,6 +161,11 @@ function deleteSection(button) {
 function deleteIngredient(button) {
     const ingredient = button.closest('.ingredient-container');
     ingredient.remove();
+}
+
+function deleteInstruction(button) {
+    const instruction = button.closest('.instruction-container');
+    instruction.remove();
 }
 
 function getIngredients() {
