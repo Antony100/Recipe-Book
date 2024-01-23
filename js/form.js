@@ -33,9 +33,10 @@ function addIngredientSection() {
     newIngredientSection.className = 'ingredient-section';
 
     newIngredientSection.innerHTML = `
-            <label for="sectionName">Ingredient Section Name:</label>
-            <input type="text" name="sectionName" required>
-          `;
+        <label for="sectionName">Ingredient Section Name:</label>
+        <input type="text" name="sectionName" required>
+        <button type="button" class="delete-section-btn" onclick="deleteSection(this)">Delete Section</button>
+    `;
 
     const ingredientContainer = document.createElement('div');
     ingredientContainer.className = 'ingredient-container';
@@ -43,7 +44,7 @@ function addIngredientSection() {
 
     ingredientContainer.innerHTML = `
         <div class="row ingredient-container">
-            <div class="col s4">
+            <div class="col s3">
                 <label for="quantity">Quantity:</label>
                 <input type="text" name="quantity" required>
             </div>
@@ -54,8 +55,8 @@ function addIngredientSection() {
                 <datalist id="measure-select">
                     <option value="grams">
                     <option value="kilograms">
-                    <option value="millilitres">
-                    <option value="litres">
+                    <option value="milliliters">
+                    <option value="liters">
                     <option value="cups">
                     <option value="teaspoon">
                     <option value="tablespoon">
@@ -68,8 +69,12 @@ function addIngredientSection() {
                 <label for="ingredient">Ingredient:</label>
                 <input type="text" name="ingredient" required>
             </div>
+
+            <div class="col s1">
+                <a class="delete-ingredient-btn" onclick="deleteIngredient(this)"><i class="material-icons icon-medium">delete_forever</i></a>
+            </div>
         </div>
-          `;
+    `;
 
     // dynamically add button
     const addIngredientButton = document.createElement('button');
@@ -88,7 +93,7 @@ function addIngredient(container) {
 
     ingredientContainer.innerHTML = `
         <div class="row">
-            <div class="col s4">
+            <div class="col s3">
                 <label for="quantity">Quantity:</label>
                 <input type="text" name="quantity" required>
             </div>
@@ -99,8 +104,8 @@ function addIngredient(container) {
                 <datalist id="measure-select">
                     <option value="grams">
                     <option value="kilograms">
-                    <option value="millilitres">
-                    <option value="litres">
+                    <option value="milliliters">
+                    <option value="liters">
                     <option value="cups">
                     <option value="teaspoon">
                     <option value="tablespoon">
@@ -109,13 +114,23 @@ function addIngredient(container) {
                 </datalist>
             </div>
 
-
             <div class="col s4">
                 <label for="ingredient">Ingredient:</label>
                 <input type="text" name="ingredient" required>
             </div>
+
+            <div class="col s1">
+                <a class="delete-ingredient-btn" onclick="deleteIngredient(this)"><i class="material-icons icon-medium">delete_forever</i></a>
+            </div>
         </div>
-          `;
+    `;
+
+    // Add event listener for the delete ingredient button
+    const deleteIngredientButton = ingredientContainer.querySelector('.delete-ingredient-btn');
+    deleteIngredientButton.addEventListener('click', function () {
+        deleteIngredient(this);
+    });
+
     container.appendChild(ingredientContainer);
 }
 
@@ -125,11 +140,27 @@ function addInstruction() {
     const newInstruction = document.createElement('div');
     newInstruction.className = 'instruction-container';
     newInstruction.innerHTML = `
-            <label for="instruction">Instruction:</label>
-            <textarea name="instruction" rows="4" required></textarea>
-          `;
+    <div class="col s11">
+        <label for="instruction">Instruction:</label>
+        <textarea name="instruction" rows="4" required></textarea>
+    </div>
+
+    <div class="col s1">
+        <a class="delete-intruction-step"><i class="material-icons icon-medium">delete_forever</i></a>
+    </div>
+    `;
 
     instructionContainer.appendChild(newInstruction);
+}
+
+function deleteSection(button) {
+    const section = button.closest('.ingredient-section');
+    section.remove();
+}
+
+function deleteIngredient(button) {
+    const ingredient = button.closest('.ingredient-container');
+    ingredient.remove();
 }
 
 function getIngredients() {
@@ -189,4 +220,3 @@ function submitRecipe() {
     window.location.href = "http://127.0.0.1:5500/Recipe-Book/home.html"
     return false;
 }
-
