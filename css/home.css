@@ -36,7 +36,7 @@ select {
 }
 
 .ingredient-section {
-    margin-bottom: 20px !important;
+    padding-bottom: 20px !important;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 8px;
@@ -283,4 +283,45 @@ ul {
     right: 24px !important;
     bottom: 60px !important;
     position: absolute;
+}
+
+/* Add this CSS to your stylesheet or in a <style> tag in your HTML */
+
+.ingredient-section {
+    position: relative;
+}
+
+.delete-section-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+
+.delete-ingredient-btn {
+    top: 30px;
+    position: relative;
+    cursor: pointer;
+    color: #f44336;
+}
+
+
+.icon-medium {
+    font-size: 40px !important;
+}
+
+.delete-instruction-btn {
+    top: 30px;
+    position: relative;
+    cursor: pointer;
+    color: #f44336;
 }
