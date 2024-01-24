@@ -2,14 +2,6 @@ body {
     background-color: #e6e2e23b;
 }
 
-
-.form-box {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 label {
     display: block;
     margin-bottom: 8px;
@@ -21,6 +13,51 @@ select {
     opacity: 1 !important;
 }
 
+ul {
+    list-style: none;
+}
+
+/*----- Navbar ----- */
+nav i {
+    font-size: 16px;
+    height: 0px;
+}
+
+#navbar {
+    margin-top: 2%;
+    background-color: rgba(240, 49, 23, 1);
+    border-radius: 10px;
+
+}
+
+#logo {
+    height: 70px;
+    width: 70px;
+}
+
+#brandName {
+    font-family: 'Great Vibes', cursive;
+    font-size: 35px;
+}
+
+#navAbout {
+    text-align: end;
+    font-family: 'Kanit', sans-serif;
+}
+
+.randomIcon {
+    color: white;
+}
+
+
+/*----- Forms ----- */
+
+.form-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 #submitBtn {
     background-color: #4caf50;
@@ -36,53 +73,63 @@ select {
 }
 
 .ingredient-section {
-    margin-bottom: 20px !important;
+    padding-bottom: 20px !important;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 8px;
     list-style: none;
 }
 
+.delete-btn-pos {
+    right: 24px !important;
+    bottom: 10px !important;
+    position: absolute;
+}
 
-#navbar {
-    margin-top: 2%;
-    background-color: rgb(187, 30, 9);
-    border-radius: 10px;
-
+.edit-btn-pos {
+    right: 24px !important;
+    bottom: 60px !important;
+    position: absolute;
 }
 
 
-#logo {
-    height: 70px;
-    width: 70px;
+.ingredient-section {
+    position: relative;
 }
 
-#brandName {
-    font-family: 'Great Vibes', cursive;
-    font-size: 35px;
+.delete-section-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 7px;
 }
 
-#searchIcon {
-    text-align: end;
-    color: white;
+
+.delete-ingredient-btn {
+    top: 30px;
+    position: relative;
+    cursor: pointer;
+    color: #f44336;
 }
 
-#searchBox>input {
-    color: white;
+
+.icon-medium {
+    font-size: 40px !important;
 }
 
-#navAbout {
-    text-align: end;
-    font-family: 'Kanit', sans-serif;
-}
-
-#randomBtn {
-    text-align: center;
-    padding-right: 1em;
-}
-
-.randomIcon {
-    color: white;
+.delete-instruction-btn {
+    top: 30px;
+    position: relative;
+    cursor: pointer;
+    color: #f44336;
 }
 
 /* media queries */
@@ -192,6 +239,7 @@ select {
     }
 }
 
+/*----- Home page -----*/
 .card-image {
     max-height: 100% !important;
     position: relative;
@@ -212,17 +260,10 @@ select {
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* .btn-floating.halfway-fab {
-    right: 24px;
-    bottom: 10px;
-    position: absolute;
-} */
-
 .card-title {
     font-family: 'Great Vibes', cursive;
-    font-size: 30px !important;
+    font-size: 30px;
     text-shadow: 2px 2px 4px #000000;
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
 .card {
@@ -233,14 +274,7 @@ select {
     box-shadow: none !important;
 }
 
-.vl {
-    border-left: 6px solid green;
-    height: 500px;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 0;
-}
+/* ----- Recipe View ----- */
 
 #recipeTitle {
     font-family: 'Great Vibes', cursive;
@@ -249,15 +283,6 @@ select {
 #recipeInfo,
 nav ul li a {
     font-family: 'Kanit', sans-serif;
-}
-
-nav i {
-    font-size: 16px;
-    height: 0px;
-}
-
-ul {
-    list-style: none;
 }
 
 .strike {
@@ -271,57 +296,4 @@ ul {
 #ingredientList li,
 #method p {
     cursor: pointer;
-}
-
-.delete-btn-pos {
-    right: 24px !important;
-    bottom: 10px !important;
-    position: absolute;
-}
-
-.edit-btn-pos {
-    right: 24px !important;
-    bottom: 60px !important;
-    position: absolute;
-}
-
-/* Add this CSS to your stylesheet or in a <style> tag in your HTML */
-
-.ingredient-section {
-    position: relative;
-}
-
-.delete-section-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 5px;
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 7px;
-}
-
-
-.delete-ingredient-btn {
-    top: 30px;
-    position: relative;
-    cursor: pointer;
-    color: #f44336;
-}
-
-
-.icon-medium {
-    font-size: 40px !important;
-}
-
-.delete-instruction-btn {
-    top: 30px;
-    position: relative;
-    cursor: pointer;
-    color: #f44336;
 }
