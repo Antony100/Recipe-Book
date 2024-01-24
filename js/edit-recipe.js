@@ -1,4 +1,3 @@
-// edit-recipe.js
 fetch('./nav.html')
     .then(response => response.text())
     .then(data => {

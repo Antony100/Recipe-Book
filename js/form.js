@@ -55,8 +55,8 @@ function addIngredientSection() {
                 <datalist id="measure-select">
                     <option value="grams">
                     <option value="kilograms">
-                    <option value="milliliters">
-                    <option value="liters">
+                    <option value="millilitres">
+                    <option value="litres">
                     <option value="cups">
                     <option value="teaspoon">
                     <option value="tablespoon">
@@ -104,8 +104,8 @@ function addIngredient(container) {
                 <datalist id="measure-select">
                     <option value="grams">
                     <option value="kilograms">
-                    <option value="milliliters">
-                    <option value="liters">
+                    <option value="millilitres">
+                    <option value="litres">
                     <option value="cups">
                     <option value="teaspoon">
                     <option value="tablespoon">
@@ -212,7 +212,7 @@ function submitRecipe() {
         prepTime: document.getElementById('prepTime').value,
         cookTime: document.getElementById('cookTime').value,
         difficulty: document.getElementById('difficulty').value,
-        serves: parseInt(document.getElementById('serves').value),
+        serves: document.getElementById('serves').value,
         dishType: document.getElementById('dishType').value,
         isVegetarian: document.getElementById('isVegetarian').value === 'yes',
         isVegan: document.getElementById('isVegan').value === 'yes',
