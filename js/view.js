@@ -34,18 +34,14 @@ document.addEventListener('DOMContentLoaded', function () {
             methodSection.innerHTML += `<p>${instruction}</p>`;
         });
 
-        // Add event listener for ingredient list
+        // Add strikethrough on click
         ingredientList.addEventListener('click', function (event) {
-            // Check if a list item (ingredient) was clicked
             if (event.target.tagName === 'LI') {
-                // Toggle the 'strikethrough' class
                 event.target.classList.toggle('strike');
             }
         });
         methodSection.addEventListener('click', function (event) {
-            // Check if a list item (ingredient) was clicked
             if (event.target.tagName === 'P') {
-                // Toggle the 'strikethrough' class
                 event.target.classList.toggle('strike');
             }
         });
