@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('cookTime').textContent = `Cook time: ${currentRecipeData.cookTime}`;
         document.getElementById('dishType').textContent = `Dish Type: ${currentRecipeData.dishType}`;
         document.getElementById('difficulty').textContent = `Difficulty: ${currentRecipeData.difficulty}`;
+        document.getElementById('serves').textContent = `Serves: ${currentRecipeData.serves}`;
         document.getElementById('isVegetarian').textContent = `Vegetarian: ${currentRecipeData.isVegetarian ? 'Yes' : 'No'}`;
         document.getElementById('isVegan').textContent = `Vegan: ${currentRecipeData.isVegan ? 'Yes' : 'No'}`;
         document.getElementById('recipeImage').innerHTML = `<img src="${currentRecipeData.image}">`;
