@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('cookTime').textContent = `Cook time: ${currentRecipeData.cookTime}`;
         document.getElementById('dishType').textContent = `Dish Type: ${currentRecipeData.dishType}`;
         document.getElementById('difficulty').textContent = `Difficulty: ${currentRecipeData.difficulty}`;
+        document.getElementById('serves').textContent = `Serves: ${currentRecipeData.serves}`;
         document.getElementById('isVegetarian').textContent = `Vegetarian: ${currentRecipeData.isVegetarian ? 'Yes' : 'No'}`;
         document.getElementById('isVegan').textContent = `Vegan: ${currentRecipeData.isVegan ? 'Yes' : 'No'}`;
         document.getElementById('recipeImage').innerHTML = `<img src="${currentRecipeData.image}">`;
@@ -34,18 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
             methodSection.innerHTML += `<p>${instruction}</p>`;
         });
 
-        // Add event listener for ingredient list
+        // Add strikethrough on click
         ingredientList.addEventListener('click', function (event) {
-            // Check if a list item (ingredient) was clicked
             if (event.target.tagName === 'LI') {
-                // Toggle the 'strikethrough' class
                 event.target.classList.toggle('strike');
             }
         });
         methodSection.addEventListener('click', function (event) {
-            // Check if a list item (ingredient) was clicked
             if (event.target.tagName === 'P') {
-                // Toggle the 'strikethrough' class
                 event.target.classList.toggle('strike');
             }
         });
